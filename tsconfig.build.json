@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "noEmit": false,
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": [
+    "src/index.tsx",
+    "src/vue.ts",
+    "src/angular.ts",
+    "src/react-native.tsx",
+    "src/vanilla.ts",
+    "src/quter-pixels.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}

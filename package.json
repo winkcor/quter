@@ -1,0 +1,128 @@
+{
+  "name": "@winkcor/quter",
+  "version": "1.0.0",
+  "packageManager": "pnpm@12.23.0",
+  "description": "Framework-neutral artistic QR codes with React, Vue, and vanilla JavaScript adapters.",
+  "type": "module",
+  "author": "Winkcor",
+  "license": "MIT",
+  "homepage": "https://github.com/winkcor/quter#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winkcor/quter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/winkcor/quter/issues"
+  },
+  "keywords": [
+    "quter",
+    "react",
+    "vue",
+    "angular",
+    "capacitor",
+    "vanilla",
+    "qrcode",
+    "qr-code",
+    "react-native",
+    "svg",
+    "typescript",
+    "styled"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "docs/images/qr-logo.svg",
+    "docs/images/qr-image.svg",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "bin": {
+    "quter": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsup && tsup --config tsup.vanilla.config.ts && tsup --config tsup.cli.config.ts && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepack": "pnpm run build",
+    "pack:check": "pnpm pack --dry-run"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.10",
+    "@types/react": "19.3.1",
+    "@types/react-dom": "19.3.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-native": "0.88.1",
+    "react-native-svg": "15.16.1",
+    "tsup": "9.0.0",
+    "typescript": "7.0.2",
+    "vitest": "5.1.1",
+    "vue": "^3.5.40"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=18.0.0",
+    "react": ">=18.0.0",
+    "react-native": ">=0.72.0",
+    "react-native-svg": ">=15.0.0",
+    "vue": "^3.5.0"
+  },
+  "peerDependenciesMeta": {
+    "@angular/core": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    },
+    "react-native-svg": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/vanilla.global.js",
+  "jsdelivr": "./dist/vanilla.global.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./react": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./vue": {
+      "types": "./dist/vue.d.ts",
+      "import": "./dist/vue.mjs",
+      "require": "./dist/vue.cjs"
+    },
+    "./angular": {
+      "types": "./dist/angular.d.ts",
+      "import": "./dist/angular.mjs",
+      "require": "./dist/angular.cjs"
+    },
+    "./react-native": {
+      "types": "./dist/react-native.d.ts",
+      "react-native": "./dist/react-native.mjs",
+      "import": "./dist/react-native.mjs",
+      "require": "./dist/react-native.cjs"
+    },
+    "./vanilla": {
+      "types": "./dist/vanilla.d.ts",
+      "import": "./dist/vanilla.mjs",
+      "require": "./dist/vanilla.cjs"
+    }
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  }
+}
